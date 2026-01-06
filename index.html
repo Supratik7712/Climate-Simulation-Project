@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Climate & Sustainability Simulator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <h1>🌍 Climate & Sustainability Simulator</h1>
+      <div class="score-badge">
+        <div class="score-display">
+          <span class="score-label">Score:</span>
+          <span class="score-value" id="score">0</span>
+        </div>
+      </div>
+    </div>
+    <p>Learn how your decisions impact the planet</p>
+  </header>
+
+  <main class="container">
+
+    <section class="controls">
+      <h2>🌱 Make Your Decisions</h2>
+
+      <label>
+        <span class="control-icon">⚡</span> Renewable Energy (%):
+        <input type="range" min="0" max="100" value="40" id="renewable">
+        <span id="renewableValue" class="slider-value">40</span>%
+      </label>
+
+      <label>
+        <span class="control-icon">🌳</span> Tree Plantation Level:
+        <input type="range" min="0" max="100" value="30" id="trees">
+        <span id="treeValue" class="slider-value">30</span>%
+      </label>
+
+      <label>
+        <span class="control-icon">♻️</span> Recycling Effort:
+        <input type="range" min="0" max="100" value="20" id="recycle">
+        <span id="recycleValue" class="slider-value">20</span>%
+      </label>
+
+      <button id="nextYear" class="btn-primary">▶ Simulate Next Year</button>
+      <button id="reset" class="btn-secondary">🔄 Reset Simulation</button>
+    </section>
+
+    <section class="status">
+      <h2>📊 Current Status</h2>
+      <div class="status-grid">
+        <div class="status-item">
+          <span class="status-label">Year:</span>
+          <span class="status-value" id="year">1</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">🌡️ Temperature:</span>
+          <span class="status-value temp" id="temperature">1.0</span> °C
+        </div>
+        <div class="status-item">
+          <span class="status-label">🏭 Emissions:</span>
+          <span class="status-value emissions" id="emissions">100</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">🌿 Health:</span>
+          <span class="status-value health" id="health">70</span>/100
+        </div>
+      </div>
+    </section>
+
+    <section class="badges-section">
+      <h2>🏆 Achievements</h2>
+      <div class="badges-container" id="badgesContainer">
+        <div class="badge locked" title="Reduce emissions by 50%">
+          <span class="badge-icon">🌱</span>
+          <span class="badge-text">Green Pioneer</span>
+        </div>
+        <div class="badge locked" title="Maintain health above 80 for 3 years">
+          <span class="badge-icon">💚</span>
+          <span class="badge-text">Earth Guardian</span>
+        </div>
+        <div class="badge locked" title="Keep temperature below 1.5°C">
+          <span class="badge-icon">❄️</span>
+          <span class="badge-text">Climate Master</span>
+        </div>
+        <div class="badge locked" title="Use 100% renewable energy">
+          <span class="badge-icon">⚡</span>
+          <span class="badge-text">Energy Expert</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="charts-container">
+      <section class="chart-section">
+        <h3>Global Temperature Trend</h3>
+        <canvas id="climateChart"></canvas>
+      </section>
+
+      <section class="chart-section">
+        <h3>CO₂ Emissions Level</h3>
+        <canvas id="emissionsChart"></canvas>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Educational Simulation | Built with HTML, CSS & JS | Play, Learn, Protect! 🌍</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
